@@ -1,0 +1,15 @@
+Package: tsentiment
+Type: Package
+Title: Fetching tweet data for sentiment analysis
+Version: 0.1.0
+Author: c(
+    person("Hakki", "Sabah", , "hakkisabah", role = c("aut", "cre"))
+    )
+Maintainer: Hakki Sabah <hakkisabah@hotmail.com.tr>
+Description: Sentiment Analysis
+License: MIT
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/hakkisabah/tweet-sentiment
+BugReports: https://github.com/hakkisabah/tweet-sentiment/issues
+Imports: reshape2,SnowballC,wordcloud,wordcloud2,webshot,RColorBrewer,ggplot2,tm,httr,jsonlite,syuzhet,tidyverse,tidytext,magrittr,dplyr,tibble,grDevices
