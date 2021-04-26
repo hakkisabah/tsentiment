@@ -5,6 +5,10 @@ tsentiment is a sentiment analysis package created with R programming language.
 A Twitter Developer Account will be required to use this tool.
 For sentiment analysis, tsentiment scans the keyword you want to search for, and presents two visual results to the user as a result of the process.
 
+## Example Results
+![SetupIndex](AnalysedBarPlot.png)
+![SetupIndex](AnalysedComparisonCloud.png)
+
 ## Limitation
 - page limit range 100-300 ( Decided by Twitter, requests per 15-minute limited to 450 )
 
