@@ -21,7 +21,7 @@ getBarSentiment <- function(tweet){
     xlab("sentiments") + ylab("scores")
 
   pngName <-
-    paste(getwd(),"results/",format(Sys.time(), "%d-%b-%Y %H-%M-%S"),"-AnalysedBarPlot.png",sep = "")
+    paste(getwd(),"/results/",format(Sys.time(), "%d-%b-%Y %H-%M-%S"),"-AnalysedBarPlot.png",sep = "")
 
   png(pngName)
 

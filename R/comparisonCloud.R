@@ -3,7 +3,7 @@ getCloudSentiment <- function(text) {
   # Create now the cloud: a pair of warnings, because you do not have negative words and it is joining by word(correct)
 
   pngName <-
-    paste(getwd(),"results/",format(Sys.time(), "%d-%b-%Y %H-%M-%S"),"-AnalysedComparisonCloud.png",sep = "")
+    paste(getwd(),"/results/",format(Sys.time(), "%d-%b-%Y %H-%M-%S"),"-AnalysedComparisonCloud.png",sep = "")
 
   png(pngName, width = 480, height = 480,units = "px", pointsize = 12)
 
