@@ -29,13 +29,14 @@ packages = c(
 
 # Sentiment Analysis
 
-# https://stackoverflow.com/questions/4216753/check-existence-of-directory-and-create-if-doesnt-exist
-# We need results directory and if exist warning false
-dir.create(file.path("results/"), showWarnings = FALSE)
-
 # set Twitter API V2 account informations
 
 setAccount <- function(params){
+  # trigger
+  # https://stackoverflow.com/questions/4216753/check-existence-of-directory-and-create-if-doesnt-exist
+  # We need results directory and if exist warning false
+  dir.create(file.path("results/"), showWarnings = FALSE)
+
   packager(packages)
   isVersionOk <- checkVersionForSentiment()
 
