@@ -7,6 +7,7 @@ For sentiment analysis, tsentiment scans the keyword you want to search for, and
 
 ## Limitation
 - page limit range 100-300 ( Decided by Twitter, requests per 15-minute limited to 450 )
+- accept only english words for search
 
 ## Requirements
 - R (>=4.0.5)
