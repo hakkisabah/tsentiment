@@ -6,3 +6,5 @@
 ^\.github$
 ^AnalysedBarPlot\.png$
 ^AnalysedComparisonCloud\.png$
+^CRAN-RELEASE$
+^LICENSE\.md$

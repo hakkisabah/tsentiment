@@ -27,5 +27,7 @@ APIinfo <- list("headers" = headers,"params" = params,
 url = "https://api.twitter.com/2/tweets/search/recent")
 nextParams <- list(`query` = APIinfo$params$query,
 `next_token` = "After fetching take a token for next tweet fetch")
+\dontrun{
 nextTweetFetcher(APIinfo,nextParams,q = APIinfo$params$page)
+}
 }

@@ -8,6 +8,7 @@
 #' @param nextParams required after the first tweet fetch process
 #' @param q is quantity, so its looping pagination limit
 #' @examples
+
 #' headers <- c(`Authorization` = sprintf('Bearer %s', "YOUR BEARER TOKEN"))
 #' params <- list(`query` = paste("Your-query", "lang:en"),`max_results` = 100,
 #' `tweet.fields` = 'created_at,lang,conversation_id',`page` = 1)
@@ -15,7 +16,9 @@
 #' url = "https://api.twitter.com/2/tweets/search/recent")
 #' nextParams <- list(`query` = APIinfo$params$query,
 #' `next_token` = "After fetching take a token for next tweet fetch")
+#' \dontrun{
 #' nextTweetFetcher(APIinfo,nextParams,q = APIinfo$params$page)
+#' }
 
 
 nextTweetFetcher <- function(APIinfo = NULL, nextParams = NULL, q = NULL) {

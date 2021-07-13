@@ -3,7 +3,6 @@ Type: Package
 Title: Fetching Tweet Data for Sentiment Analysis
 Version: 0.1.0
 Authors@R: c(person("Hakki","Sabah",email = "hakkisabah@hotmail.com",role = c("aut", "cre")))
-Maintainer: Hakki Sabah <hakkisabah@hotmail.com>
 Description: First of all need Twitter Developer Account, package has exporting image for result after using.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -11,5 +10,5 @@ LazyData: true
 URL: https://github.com/hakkisabah/tsentiment
 BugReports: https://github.com/hakkisabah/tsentiment/issues
 Depends: R (>= 4.0)
-Imports: reshape2,SnowballC,wordcloud,wordcloud2,webshot,RColorBrewer,ggplot2,tm,httr,jsonlite,syuzhet,tidyverse,tidytext,magrittr,dplyr,tibble,grDevices
+Imports: reshape2,grid,SnowballC,wordcloud,wordcloud2,webshot,RColorBrewer,ggplot2,tm,httr,jsonlite,syuzhet,tidyverse,tidytext,magrittr,dplyr,tibble,grDevices
 RoxygenNote: 7.1.1
