@@ -1,31 +1,42 @@
-# Get Analysis from Twitter
+utils::globalVariables(names = c("APIinfo"),package = "tsentiment")
+#' Start analysis after defined Twitter API information
+#'
+#' This function prepare API information and start analysis
+#'
+#' @return void
 #' @export
-#' 
-#' 
+#' @examples
+#' getBarSentiment()
 
-# source("R/tweetFetcher.R")
-# source("R/twitterDataCleaner.R")
-# source("R/comparisonCloud.R")
-# source("R/barPlot.R")
 
 getAnalysis <- function(){
-  
-  # tweetFetcher
-  
-  # Setup Twitter API Informations
-  setupFetch <- tweetFetcher(APIinfo)
-  message("Analysis started !")
-  
-  # Send request for tweet content
-  fetchedTweet <- tweetFetcher.fetch(setupFetch)
-  
-  if (!is.null(fetchedTweet)) {
-    cleanedDocs <- cleanFetchedTweet(fetchedTweet)
-    
-    # create tweet sentiments
-    getCloudSentiment(cleanedDocs)
-    
-    getBarSentiment(cleanedDocs)
+
+
+  if (exists("APIinfo")){
+
+    # tweetFetcher
+
+    # Setup Twitter API Informations
+    setupFetch <- tweetFetcher(APIinfo)
+    message("Analysis started !")
+
+    # Send request for tweet content
+    fetchedTweet <- tweetFetcher.fetch(setupFetch)
+
+    if (!is.null(fetchedTweet)) {
+      cleanedDocs <- cleanFetchedTweet(fetchedTweet)
+
+      # create tweet sentiments
+      getCloudSentiment(cleanedDocs)
+
+      getBarSentiment(cleanedDocs)
+    }else{
+      warning("Tweet fetch error!")
+    }
+
+  }else{
+    warning("First of use setAccount function correctly")
   }
-  
+
+
 }

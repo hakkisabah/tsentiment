@@ -1,14 +1,21 @@
-# Twitter API V2 Account Setup
+#' Fetch Tweets
+#'
+#' This function prepare http information for fetching process and working together sub functin
+#'
+#' @return list
 #' @export
+#' @param APIinfo Entered API information
+#' @examples
+#' APIinfo <- list(BEARER_TOKEN = "DSEFS55SSS",query = "binance",page = 300)
+#' tweetFetcher(APIinfo)
 
-# source("R/nextTweetLooper.R")
 
 tweetFetcher <- function(APIinfo) {
   # https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/master/Recent-Search/recent-search.r
-  
+
   headers <-
     c(`Authorization` = sprintf('Bearer %s', APIinfo$BEARER_TOKEN))
-  
+
   params = list(
     `query` = paste(APIinfo$query, "lang:en"),
     `max_results` = APIinfo$max_results,
@@ -19,9 +26,9 @@ tweetFetcher <- function(APIinfo) {
     list("headers" = headers,
          "params" = params,
          url = APIinfo$url)
-  
+
   return(fetchInfo)
-  
+
 }
 
 
@@ -35,7 +42,7 @@ tweetFetcher.fetch <- function(APIinfo) {
         httr::add_headers(.headers = APIinfo$headers),
         query = APIinfo$params
       )
-    
+
     recent_search_body <-
       httr::content(
         response,
@@ -43,18 +50,18 @@ tweetFetcher.fetch <- function(APIinfo) {
         type = 'application/json',
         simplifyDataFrame = TRUE
       )
-    
+
     nextParams = list(`query` = APIinfo$params$query,
                       `next_token` = recent_search_body$meta$next_token)
-    
+
     paginateRequested <-
       paste(
         recent_search_body$data$text,
         nextTweetFetcher(APIinfo, nextParams, q = APIinfo$params$page)
       )
-    
+
     return(paginateRequested)
-    
+
   },
   error = function(err) {
     message("Tweet Fetch Failed ")
@@ -71,6 +78,6 @@ tweetFetcher.fetch <- function(APIinfo) {
     message(paste("Processed URL:", APIinfo$url))
     message("Processing end")
   })
-  
+
   return(out)
 }

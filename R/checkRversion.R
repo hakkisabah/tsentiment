@@ -1,9 +1,15 @@
-# check R version
+#' Check r Version
+#'
+#' This function checking using current R version
+#'
+#' @return boolean
 #' @export
-version <- R.version
+#' @examples
+#' checkVersionForSentiment()
 
 checkVersionForSentiment <- function() {
-  if ((version$major < 4 && version$major != 4) == TRUE) {
+  currentVersion <- R.version
+  if ((currentVersion$major < 4 && currentVersion$major != 4) == TRUE) {
     message("Required R version 4.0.5 or above")
     message("Please update your R environment")
     return(NULL)

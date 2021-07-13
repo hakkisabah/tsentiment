@@ -23,20 +23,20 @@ For sentiment analysis, tsentiment scans the keyword you want to search for, and
 ## Use Case
 In R console typing this conditions
 ```
-setAccount(list(
+> setAccount(list(
     BEARER_TOKEN = "Your-Bearer-Token",
     query = "Your-Keyword",
-    page = pagenumber(numeric)
+    page = 300
 ))
 
-getAnalysis()
+> getAnalysis()
 
 ```
 
 Its simple !
 
-After complete analysis check your workspace and you will see results directory. All succesful results saving this location.
+After complete analysis check your Documents and you will see results directory. All succesful results saving this location.
 
 ## Example Results
-![SetupIndex](AnalysedBarPlot.png)
-![SetupIndex](AnalysedComparisonCloud.png)
+![SetupIndex](man/figures/AnalysedBarPlot.png)
+![SetupIndex](man/figures/AnalysedComparisonCloud.png)
