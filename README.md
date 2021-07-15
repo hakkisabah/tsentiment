@@ -39,5 +39,5 @@ Its simple !
 After complete analysis check your Documents and you will see results directory. All succesful results saving this location.
 
 ## Example Results
-![SetupIndex](docs/reference/figures/AnalysedBarPlot.png)
-![SetupIndex](docs/reference/figures/AnalysedComparisonCloud.png)
+![SetupIndex](http://cdn.hakkisabah.com/tsentiment/AnalysedBarPlot.png)
+![SetupIndex](http://cdn.hakkisabah.com/tsentiment/AnalysedBarPlot.png)
