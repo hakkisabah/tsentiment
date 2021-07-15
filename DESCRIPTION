@@ -10,5 +10,5 @@ LazyData: true
 URL: https://github.com/hakkisabah/tsentiment
 BugReports: https://github.com/hakkisabah/tsentiment/issues
 Depends: R (>= 4.0)
-Imports: reshape2,grid,SnowballC,wordcloud,wordcloud2,webshot,RColorBrewer,ggplot2,tm,httr,jsonlite,syuzhet,tidyverse,tidytext,magrittr,dplyr,tibble,grDevices
+Imports: reshape2,haven,readr,grid,SnowballC,wordcloud,wordcloud2,webshot,RColorBrewer,ggplot2,tm,httr,jsonlite,syuzhet,tidyverse,tidytext,magrittr,dplyr,tibble,grDevices
 RoxygenNote: 7.1.1

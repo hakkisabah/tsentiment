@@ -10,6 +10,7 @@ For sentiment analysis, tsentiment scans the keyword you want to search for, and
 - accept only english words for search
 
 ## Requirements
+- Required minimum 2GB RM (for readr package)
 - R (>=4.0.5)
 - R devtools library
 - Twitter Developer Account

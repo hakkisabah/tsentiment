@@ -4,7 +4,6 @@
 ^docs$
 ^pkgdown$
 ^\.github$
-^AnalysedBarPlot\.png$
-^AnalysedComparisonCloud\.png$
 ^CRAN-RELEASE$
 ^LICENSE\.md$
+^README\.md$
