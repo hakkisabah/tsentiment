@@ -11,19 +11,8 @@
 # We need results directory and if exist warning false
 
 createFolder <- function(){
-  system = getSystem()
-  documentBase = ''
-  if (system == "Windows"){
-    documentsBase = Sys.getenv("R_USER")
-  }else{
-    documentsBase = Sys.getenv("HOME")
-  }
+  documentsBase <- tools::R_user_dir("tsentiment")
   path = paste(documentsBase,"/","results","/",sep = "")
   dir.create(file.path(path), recursive = TRUE, showWarnings = FALSE)
   return(path)
-}
-
-getSystem <- function(){
-  sysinf = Sys.info()[1]
-  return(sysinf)
 }
