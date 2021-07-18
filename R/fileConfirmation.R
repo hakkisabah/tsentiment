@@ -8,16 +8,13 @@
 #' }
 
 checkConfirmForUSer <- function() {
-  if (exists("fileConfirmation")) {
-    if (fileConfirmation != 'y') {
-      fileConfirmation <- fileConfirmation
+  if (length(APIinfo$fileConfirmation) > 0) {
+    if (APIinfo$fileConfirmation != 'y') {
       isConfirm <- questionOfPermission()
       isPermission = checkPermission(isConfirm)
-      fileConfirmation <<- isPermission
       return(isPermission)
     } else{
-      fileConfirmation <<- "y"
-      return(fileConfirmation)
+      return(APIinfo$fileConfirmation)
     }
   } else{
     isConfirm <- questionOfPermission()
@@ -27,12 +24,9 @@ checkConfirmForUSer <- function() {
 }
 
 checkPermission <- function(isConfirm) {
-  fileConfirmation <- "n"
   if (tolower(isConfirm) != 'y') {
-    fileConfirmation <<- isConfirm
     return(isConfirm)
   } else{
-    fileConfirmation <<- isConfirm
     return(isConfirm)
   }
 }

@@ -4,10 +4,10 @@
 \alias{tweetFetcher}
 \title{Fetch Tweets}
 \usage{
-tweetFetcher(APIinfo)
+APIinfo
 }
 \arguments{
-\item{APIinfo}{Entered API information}
+\item{APIinfo}{is environment}
 }
 \value{
 list
@@ -16,6 +16,6 @@ list
 This function prepare http information for fetching process and working together sub functin
 }
 \examples{
-APIinfo <- list(BEARER_TOKEN = "DSEFS55SSS",query = "binance",page = 300)
-tweetFetcher(APIinfo)
+APIinfo <- list(BEARER_TOKEN = "token",query = "love",page = 100)
+tweetFetcher()
 }

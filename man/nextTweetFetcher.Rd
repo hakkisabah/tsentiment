@@ -4,10 +4,10 @@
 \alias{nextTweetFetcher}
 \title{Looping after first tweet fetching}
 \usage{
-nextTweetFetcher(APIinfo = NULL, nextParams = NULL, q = NULL)
+nextTweetFetcher(nextInfo = NULL, nextParams = NULL, q = NULL)
 }
 \arguments{
-\item{APIinfo}{sending from tweetFetcher function with final form}
+\item{nextInfo}{sending from tweetFetcher function with final form}
 
 \item{nextParams}{required after the first tweet fetch process}
 
@@ -23,11 +23,10 @@ This function should be used at the start of each session
 headers <- c(`Authorization` = sprintf('Bearer \%s', "YOUR BEARER TOKEN"))
 params <- list(`query` = paste("Your-query", "lang:en"),`max_results` = 100,
 `tweet.fields` = 'created_at,lang,conversation_id',`page` = 1)
-APIinfo <- list("headers" = headers,"params" = params,
-url = "https://api.twitter.com/2/tweets/search/recent")
-nextParams <- list(`query` = APIinfo$params$query,
+nextInfo <- list("headers" = headers,"params" = params, url = "url")
+nextParams <- list(`query` = nextInfo$params$query,
 `next_token` = "After fetching take a token for next tweet fetch")
 \dontrun{
-nextTweetFetcher(APIinfo,nextParams,q = APIinfo$params$page)
+nextTweetFetcher(nextInfo,nextParams,q = nextInfo$params$page)
 }
 }

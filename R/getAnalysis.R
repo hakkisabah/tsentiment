@@ -1,4 +1,3 @@
-utils::globalVariables(names = c("APIinfo"),package = "tsentiment")
 #' Start analysis after defined Twitter API information
 #'
 #' This function prepare API information and start analysis
@@ -11,13 +10,12 @@ utils::globalVariables(names = c("APIinfo"),package = "tsentiment")
 
 getAnalysis <- function(){
 
-
-  if (exists("APIinfo")){
+  if (is.environment(APIinfo)){
 
     # tweetFetcher
 
     # Setup Twitter API Informations
-    setupFetch <- tweetFetcher(APIinfo)
+    setupFetch <- tweetFetcher()
     message("Analysis started !")
 
     # Send request for tweet content
@@ -37,6 +35,4 @@ getAnalysis <- function(){
   }else{
     warning("First of use setAccount function correctly")
   }
-
-
 }

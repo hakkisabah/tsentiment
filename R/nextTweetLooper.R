@@ -4,26 +4,24 @@
 #'
 #' @return String
 #' @export
-#' @param APIinfo sending from tweetFetcher function with final form
+#' @param nextInfo sending from tweetFetcher function with final form
 #' @param nextParams required after the first tweet fetch process
 #' @param q is quantity, so its looping pagination limit
 #' @examples
-
 #' headers <- c(`Authorization` = sprintf('Bearer %s', "YOUR BEARER TOKEN"))
 #' params <- list(`query` = paste("Your-query", "lang:en"),`max_results` = 100,
 #' `tweet.fields` = 'created_at,lang,conversation_id',`page` = 1)
-#' APIinfo <- list("headers" = headers,"params" = params,
-#' url = "https://api.twitter.com/2/tweets/search/recent")
-#' nextParams <- list(`query` = APIinfo$params$query,
+#' nextInfo <- list("headers" = headers,"params" = params, url = "url")
+#' nextParams <- list(`query` = nextInfo$params$query,
 #' `next_token` = "After fetching take a token for next tweet fetch")
 #' \dontrun{
-#' nextTweetFetcher(APIinfo,nextParams,q = APIinfo$params$page)
+#' nextTweetFetcher(nextInfo,nextParams,q = nextInfo$params$page)
 #' }
 
 
-nextTweetFetcher <- function(APIinfo = NULL, nextParams = NULL, q = NULL) {
+nextTweetFetcher <- function(nextInfo = NULL, nextParams = NULL, q = NULL) {
 
-  if (!is.null(APIinfo) && !is.null(nextParams) && !is.null(q)){
+  if (!is.null(nextInfo) && !is.null(nextParams) && !is.null(q)){
     # Always check the correction
 
     q <- checkPageLimit(q)
@@ -33,8 +31,8 @@ nextTweetFetcher <- function(APIinfo = NULL, nextParams = NULL, q = NULL) {
     for (i in 1:q) {
       responseNext <-
         httr::GET(
-          url = APIinfo$url,
-          httr::add_headers(.headers = APIinfo$headers),
+          url = nextInfo$url,
+          httr::add_headers(.headers = nextInfo$headers),
           query = nextParams
         )
 

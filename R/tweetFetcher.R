@@ -4,13 +4,14 @@
 #'
 #' @return list
 #' @export
-#' @param APIinfo Entered API information
+#' @usage APIinfo
+#' @param  APIinfo is environment
 #' @examples
-#' APIinfo <- list(BEARER_TOKEN = "DSEFS55SSS",query = "binance",page = 300)
-#' tweetFetcher(APIinfo)
+#' APIinfo <- list(BEARER_TOKEN = "token",query = "love",page = 100)
+#' tweetFetcher()
 
 
-tweetFetcher <- function(APIinfo) {
+tweetFetcher <- function() {
   # https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/master/Recent-Search/recent-search.r
 
   headers <-
@@ -19,7 +20,7 @@ tweetFetcher <- function(APIinfo) {
   params = list(
     `query` = paste(APIinfo$query, "lang:en"),
     `max_results` = APIinfo$max_results,
-    `tweet.fields` = 'created_at,lang,conversation_id',
+    `tweet.fields` = APIinfo$tweet.fields,
     `page` = APIinfo$page
   )
   fetchInfo <-
@@ -33,14 +34,14 @@ tweetFetcher <- function(APIinfo) {
 
 
 # Twitter Recent Search Fetch
-tweetFetcher.fetch <- function(APIinfo) {
+tweetFetcher.fetch <- function(returnedInfo) {
   # https://stackoverflow.com/questions/12193779/how-to-write-trycatch-in-r
   out <- tryCatch({
     response <-
       httr::GET(
-        url = APIinfo$url,
-        httr::add_headers(.headers = APIinfo$headers),
-        query = APIinfo$params
+        url = returnedInfo$url,
+        httr::add_headers(.headers = returnedInfo$headers),
+        query = returnedInfo$params
       )
 
     recent_search_body <-
@@ -51,13 +52,14 @@ tweetFetcher.fetch <- function(APIinfo) {
         simplifyDataFrame = TRUE
       )
 
-    nextParams = list(`query` = APIinfo$params$query,
+    nextParams = list(`query` = returnedInfo$params$query,
                       `next_token` = recent_search_body$meta$next_token)
 
+    nextInfo = returnedInfo
     paginateRequested <-
       paste(
         recent_search_body$data$text,
-        nextTweetFetcher(APIinfo, nextParams, q = APIinfo$params$page)
+        nextTweetFetcher(nextInfo, nextParams, q = returnedInfo$params$page)
       )
 
     return(paginateRequested)
