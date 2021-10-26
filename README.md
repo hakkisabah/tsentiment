@@ -2,34 +2,23 @@
 
 ## Introduction
 tsentiment is a sentiment analysis package created with R programming language.
-A Twitter Developer Account will be required to use this tool.
+Just a Twitter account will be required to use this tool.
 For sentiment analysis, tsentiment scans the keyword you want to search for, and presents two visual results to the user as a result of the process.
 
 ## Limitation
-- page limit range 100-300 ( Decided by Twitter, requests per 15-minute limited to 450 )
+- request limit 150 ( each request retrieving 15 tweet and 150 requests are redefined every 15 minutes )
 - accept only english words for search
 
-## Requirements
-- Required minimum 2GB RM (for readr package)
-- R (>=4.0.5)
-- R devtools library
-- Twitter Developer Account
-- - Twitter App Bearer Token
-
-## Setup Case
-- library(devtools) // after the installation, more information => https://www.r-project.org/nosvn/pandoc/devtools.html
-- install_github("hakkisabah/tsentiment")
-- library(tsentiment)
-
 ## Use Case
-In R console typing this conditions
+- If you have a twitter account, authorize your account in the tsentiment application at <a href="https://app.tsentiment.com">app.tsentiment.com</a>
+- Define your user token to tsentiment package after authorization
+- In R console typing this conditions
 ```
 > setAccount(list(
-    BEARER_TOKEN = "Your-Bearer-Token",
+    BEARER_TOKEN = "Your-User-Token",
     query = "Your-Keyword",
-    page = 300
 ))
-
+// Note : after use setAccount required give permission for writing result files.
 > getAnalysis()
 
 ```
@@ -38,6 +27,17 @@ Its simple !
 
 After complete analysis check your Documents and you will see results directory. All succesful results saving this location.
 
+IMPORTANT NOTE : The previous analysis file are deleted before each new analysis file is created.
+
 ## Example Results
+![SetupIndex](afteranalysisresult.png)
 ![SetupIndex](AnalysedComparisonCloud.png)
 ![SetupIndex](AnalysedBarPlot.png)
+
+## Error and Warning meanings
+- Too Many Requests 429 (You've reached your rate limit in 15 minute rule. Try 15 minute later)
+- Need Twitter Auth 406 (You most likely entered the wrong user token. Use setAccount again)
+
+## Policy & Terms
+- Policy : https://app.tsentiment.com/policy
+- Terms : https://app.tsentiment.com/terms

@@ -44,8 +44,11 @@ getBarSentiment <- function(tweet = NULL){
     print(plotted)
 
     dev.off()
-    message(paste("on",imageBase,"location"))
-    message(paste(pngName, "file created!"))
+    cat(stringi::stri_pad_both(c('--Bar Plot--','Saved folder path :,',
+                                 imageBase,
+                                 'File name : ',
+                                 pngName),
+                               getOption('width')*0.9), sep='\n')
   }else{
     warning("Bar plot not created because tweet param do not exist")
   }

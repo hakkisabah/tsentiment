@@ -27,6 +27,7 @@ checkPermission <- function(isConfirm) {
   if (tolower(isConfirm) != 'y') {
     return(isConfirm)
   } else{
+    APIinfo$fileConfirmation = isConfirm
     return(isConfirm)
   }
 }
@@ -34,11 +35,12 @@ checkPermission <- function(isConfirm) {
 questionOfPermission <- function() {
   documentsBase <- tools::R_user_dir("tsentiment")
   path = paste(documentsBase, "/", "results", "/", sep = "")
-  cat("The tsentiment package will save the analysis results visually and in png format to the",
-      paste(path," path.",sep=""),
-      "Your approval is required for these transactions",
-      "Please enter using the y/n key",
-      fill = 10)
+  #https://rdrr.io/cran/stringi/man/stri_pad.html
+  cat(stringi::stri_pad_both(c('The tsentiment package will save the analysis results visually and in png format to the',
+                      paste(path," path.",sep=""),
+                      'Your approval is required for these transactions',
+                      'Please enter using the y/n key'),
+                    getOption('width')*0.9), sep='\n')
   user_input <- readline("Answer : ")
   return(user_input)
 }

@@ -22,7 +22,7 @@ getCloudSentiment <- function(text) {
   imageBase <- createFolder()
 
   pngName <-
-    paste(imageBase,format(Sys.time(), "%d-%b-%Y %H-%M-%S"),"-AnalysedComparisonCloud.png",sep = "")
+    paste(imageBase,format(Sys.time(), "%d-%m-%Y %H-%M-%S"),"-AnalysedComparisonCloud.png",sep = "")
 
   png(pngName, width = 480, height = 480,units = "px", pointsize = 12)
 
@@ -39,6 +39,9 @@ getCloudSentiment <- function(text) {
     )
 
   dev.off()
-  message(paste("on",imageBase,"location"))
-  message(paste(pngName, "file created!"))
+  cat(stringi::stri_pad_both(c('--Comparison Cloud--','Saved folder path :,',
+                               imageBase,
+                               'File name : ',
+                               pngName),
+                             getOption('width')*0.9), sep='\n')
 }

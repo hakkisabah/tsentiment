@@ -11,3 +11,5 @@
 * After Kurt Hornik's return a policy violation, file save transactions has been corrected as 'tools::R_user_dir()' and a confirmation message has been added for the user's file operations
 
 * Change APIinfo global assign behaviour to env
+
+* Major changes applied

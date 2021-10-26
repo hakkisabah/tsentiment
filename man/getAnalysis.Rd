@@ -7,11 +7,13 @@
 getAnalysis()
 }
 \value{
-void
+file
 }
 \description{
 This function prepare API information and start analysis
 }
 \examples{
+\dontrun{
 getBarSentiment()
+}
 }

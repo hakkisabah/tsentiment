@@ -5,7 +5,7 @@
 \alias{APIinfo}
 \title{tsentiment environment}
 \format{
-An object of class \code{environment} of length 8.
+An object of class \code{environment} of length 4.
 }
 \usage{
 APIinfo

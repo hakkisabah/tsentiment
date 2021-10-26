@@ -16,6 +16,6 @@ String
 This function should be used at the start of each session
 }
 \examples{
-params <- list(BEARER_TOKEN = "DSEFS55SSS",query = "binance",page = 300)
+params <- list(BEARER_TOKEN = "DSEFS55SSS",query = "binance")
 setAccount(params)
 }

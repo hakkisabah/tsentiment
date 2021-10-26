@@ -2,21 +2,24 @@
 #'
 #' This function prepare API information and start analysis
 #'
-#' @return void
+#' @return file
 #' @export
 #' @examples
+#' \dontrun{
 #' getBarSentiment()
+#' }
 
 
 getAnalysis <- function(){
 
-  if (is.environment(APIinfo)){
+  if (is.environment(APIinfo) &&
+      length(APIinfo$BEARER_TOKEN) > 0 &&
+      APIinfo$fileConfirmation == 'y'){
 
     # tweetFetcher
 
     # Setup Twitter API Informations
     setupFetch <- tweetFetcher()
-    message("Analysis started !")
 
     # Send request for tweet content
     fetchedTweet <- tweetFetcher.fetch(setupFetch)
@@ -24,12 +27,14 @@ getAnalysis <- function(){
     if (!is.null(fetchedTweet)) {
       cleanedDocs <- cleanFetchedTweet(fetchedTweet)
 
+      #clear previous results
+
+      clearPrevious()
+
       # create tweet sentiments
       getCloudSentiment(cleanedDocs)
 
       getBarSentiment(cleanedDocs)
-    }else{
-      warning("Tweet fetch error!")
     }
 
   }else{

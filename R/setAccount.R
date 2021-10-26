@@ -6,7 +6,7 @@
 #' @export
 #' @param params Its have to required Twitter and request informations for using this package
 #' @examples
-#' params <- list(BEARER_TOKEN = "DSEFS55SSS",query = "binance",page = 300)
+#' params <- list(BEARER_TOKEN = "DSEFS55SSS",query = "binance")
 #' setAccount(params)
 
 # https://levelup.gitconnected.com/sentiment-analysis-with-twitter-hashtags-in-r-af02655f2113
@@ -33,7 +33,6 @@ setAccount <- function(params){
       # Setting env
       APIinfo$BEARER_TOKEN = params$BEARER_TOKEN
       APIinfo$query = params$query
-      APIinfo$page = params$page
       # User must be given BEARER_TOKEN , query and page parameters
 
     }else{
@@ -41,7 +40,11 @@ setAccount <- function(params){
     }
 
   }else{
-    warning("User file writing confirmation fail,\n permission is needed to print analysis results,\n you can try again to allow it.")
+    message("Permission Need!")
+    cat(stringi::stri_pad_both(c('User file writing confirmation fail,',
+                        'permission is needed to print analysis results,',
+                        'you can try again to allow it.'),
+                      getOption('width')*0.9), sep='\n')
   }
 
 }
