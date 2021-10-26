@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fetch Tweets — tweetFetcher • tsentiment</title>
+<title>Get Tweet — getTweet • tsentiment</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Fetch Tweets — tweetFetcher" />
-<meta property="og:description" content="This function prepare http information for fetching process and working together sub functin" />
+<meta property="og:title" content="Get Tweet — getTweet" />
+<meta property="og:description" content="This function only get tweet from tsentiment api" />
 
 
 
@@ -111,22 +111,36 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Fetch Tweets</h1>
-    <small class="dont-index">Source: <a href='https://github.com/hakkisabah/tsentiment/blob/master/R/tweetFetcher.R'><code>R/tweetFetcher.R</code></a></small>
-    <div class="hidden name"><code>tweetFetcher.Rd</code></div>
+    <h1>Get Tweet</h1>
+    <small class="dont-index">Source: <a href='https://github.com/hakkisabah/tsentiment/blob/master/R/getTweet.R'><code>R/getTweet.R</code></a></small>
+    <div class="hidden name"><code>getTweet.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function prepare http information for fetching process and working together sub functin</p>
+    <p>This function only get tweet from tsentiment api</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tweetFetcher</span><span class='op'>(</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>getTweet</span><span class='op'>(</span><span class='va'>fetchParams</span><span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>fetchParams</th>
+      <td><p>is variable</p></td>
+    </tr>
+    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list</p>
+    <p>JSON</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>fetchParams</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>headers <span class='op'>=</span> <span class='va'>headers</span>,params <span class='op'>=</span> <span class='va'>params</span>,url <span class='op'>=</span> <span class='va'>APIinfo</span><span class='op'>$</span><span class='va'>url</span><span class='op'>)</span>
+<span class='fu'>getTweet</span><span class='op'>(</span><span class='va'>fetchParams</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
