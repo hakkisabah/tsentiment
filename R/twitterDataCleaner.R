@@ -1,16 +1,12 @@
 utils::globalVariables(names = c("word","phrases"),package = "tsentiment")
 #' Clean raw data
 #'
-#' This function clean fetchedd tweets
+#' This function clean fetched tweets
 #'
 #' @return table
 #' @export
 #' @param fetchedTweet Fetched tweet has a lot of different characters
-#' @examples
-#' fetchedTweet <- "Fetched tweet data"
-#' cleanFetchedTweet(fetchedTweet)
 #' @import tibble
-
 
 cleanFetchedTweet <- function(fetchedTweet = NULL){
 

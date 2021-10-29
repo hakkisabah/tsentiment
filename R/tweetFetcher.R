@@ -5,7 +5,6 @@
 #' @return list
 #' @export
 
-
 tweetFetcher <- function() {
   # https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/master/Recent-Search/recent-search.r
 

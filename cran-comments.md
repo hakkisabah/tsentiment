@@ -13,3 +13,5 @@
 * Change APIinfo global assign behaviour to env
 
 * Major changes applied
+
+* Please check the latest version posted, not the old one.

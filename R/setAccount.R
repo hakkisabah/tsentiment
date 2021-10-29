@@ -13,8 +13,6 @@
 
 # Sentiment Analysis
 
-# set Twitter API V2 account informations
-
 
 setAccount <- function(params){
 

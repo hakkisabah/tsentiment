@@ -15,7 +15,3 @@ file
 \description{
 This function export a word cloud with analysed data
 }
-\examples{
-text <- "Your analysed data"
-getBarSentiment(text)
-}

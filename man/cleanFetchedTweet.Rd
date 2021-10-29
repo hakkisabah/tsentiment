@@ -13,9 +13,5 @@ cleanFetchedTweet(fetchedTweet = NULL)
 table
 }
 \description{
-This function clean fetchedd tweets
-}
-\examples{
-fetchedTweet <- "Fetched tweet data"
-cleanFetchedTweet(fetchedTweet)
+This function clean fetched tweets
 }

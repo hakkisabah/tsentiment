@@ -15,7 +15,3 @@ file
 \description{
 This function export a bar plot with analysed data
 }
-\examples{
-tweet <- "Your analysed data"
-getBarSentiment(tweet)
-}

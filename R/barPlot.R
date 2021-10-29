@@ -6,9 +6,6 @@ utils::globalVariables(names = c("sentiment","Score","png","dev.off"),package = 
 #' @return file
 #' @export
 #' @param tweet Cleaned tweet data
-#' @examples
-#' tweet <- "Your analysed data"
-#' getBarSentiment(tweet)
 #' @importFrom syuzhet get_nrc_sentiment
 #' @importFrom ggplot2 ggplot aes geom_bar theme xlab ylab
 #' @importFrom graphics strwidth

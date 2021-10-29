@@ -6,9 +6,6 @@ utils::globalVariables(names = c("sentiment","png","dev.off"),package = "tsentim
 #' @return file
 #' @export
 #' @param text Cleaned tweet data
-#' @examples
-#' text <- "Your analysed data"
-#' getBarSentiment(text)
 #' @importFrom wordcloud comparison.cloud
 #' @importFrom reshape2 acast
 #' @importFrom dplyr count inner_join
