@@ -15,3 +15,5 @@
 * Major changes applied
 
 * Please check the latest version posted, not the old one.
+
+* Package name removed from description start.

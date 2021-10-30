@@ -1,10 +1,10 @@
 Package: tsentiment
 Type: Package
 Title: Fetching Tweet Data for Sentiment Analysis
-Version: 1.0.0
+Version: 1.0.1
 Author: Hakki Sabah <hakkisabah@hotmail.com>
 Maintainer: Hakki Sabah <hakkisabah@hotmail.com>
-Description: 'tsentiment' package, which uses Twitter APIs for the necessary data in sentiment analysis, acts as a middleware with the approved Twitter Application.
+Description: Which uses Twitter APIs for the necessary data in sentiment analysis, acts as a middleware with the approved Twitter Application.
     A special access key is given to users who subscribe to the application with their Twitter account. With this special access key, the user defined keyword for sentiment analysis can be searched in twitter recent searches and results can be obtained( more information <https://github.com/hakkisabah/tsentiment> ).
     In addition, a service named tsentiment-services has been developed to provide all these operations ( for more information <https://github.com/hakkisabah/tsentiment-services> ).
     After the successful results obtained and in line with the permissions given by the user, the results of the analysis of the word cloud and bar graph saved in the user folder directory can be seen. In each analysis performed, the previous analysis visual result is deleted and this is the basic information you need to know as a practice rule.
