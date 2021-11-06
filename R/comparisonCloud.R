@@ -23,8 +23,11 @@ getCloudSentiment <- function(text) {
 
   png(pngName, width = 480, height = 480,units = "px", pointsize = 12)
 
-  ready <- text %>%
-    inner_join(get_sentiments("bing")) %>%
+  joinedWord <-  text %>%
+    inner_join(get_sentiments("bing"))
+  countedWord <- count(joinedWord, sentiment, sort = TRUE)
+  if (nrow(countedWord) > 1){
+  ready <- joinedWord %>%
     count(word, sentiment, sort = TRUE) %>%
     acast(word ~ sentiment, value.var = "n", fill = 0) %>%
     comparison.cloud(
@@ -39,6 +42,10 @@ getCloudSentiment <- function(text) {
   cat(stringi::stri_pad_both(c('--Comparison Cloud--','Saved folder path :,',
                                imageBase,
                                'File name : ',
-                               pngName),
+                               pngName,' '),
                              getOption('width')*0.9), sep='\n')
+  } else {
+    cat(stringi::stri_pad_both(c('--Comparison Cloud--','no words to compare',' '),
+                               getOption('width')*0.9), sep='\n')
+  }
 }

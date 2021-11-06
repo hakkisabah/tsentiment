@@ -55,6 +55,7 @@ getTweet <- function(fetchParams){
     cat(stringi::stri_pad_both(c("Here's the original warning message: ",
                         warn$message),
                       getOption('width')*0.9), sep='\n')
+    return(NULL)
   })
   return(fetchedTweet)
 }

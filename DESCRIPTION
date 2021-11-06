@@ -1,7 +1,7 @@
 Package: tsentiment
 Type: Package
 Title: Fetching Tweet Data for Sentiment Analysis
-Version: 1.0.1
+Version: 1.0.2
 Author: Hakki Sabah <hakkisabah@hotmail.com>
 Maintainer: Hakki Sabah <hakkisabah@hotmail.com>
 Description: Which uses Twitter APIs for the necessary data in sentiment analysis, acts as a middleware with the approved Twitter Application.

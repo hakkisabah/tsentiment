@@ -36,10 +36,12 @@ tweetFetcher.fetch <- function(returnedInfo) {
   isRemain = if (is.numeric(isRate)) isRate else 1
 
   if (is.numeric(isRate)){
-    pb = progress::progress_bar$new(format = "[:bar] :current/:total (:percent)", total = isRemain)
+    # isRemain + 1 give correct percent information, because fetching one before start progress bar
+    pb = progress::progress_bar$new(format = "[:bar] :current/:total (:percent)", total = isRemain + 1)
   }
   if (!is.null(pb)){
-    while(scanned <= isRemain){
+    # loop condition order is important, first of every time check fetchedTweet
+    while(!is.null(fetchedTweet) && scanned <= isRemain){
       scanned = scanned + 1
       text <- if (!is.null(text))
         paste(text, fetchedTweet$text)
@@ -50,9 +52,12 @@ tweetFetcher.fetch <- function(returnedInfo) {
       pb$tick()
       Sys.sleep(1 / isRate)
     }
+    # need completed %100 percent
+    pb$tick(isRemain + 1)
+    Sys.sleep(1 / isRate)
     message(paste("\nScaning result :",scanned,"page scanned !"))
     return(text)
   }else{
-    return(NULL)
+      return(NULL)
   }
 }
