@@ -17,3 +17,11 @@
 * Please check the latest version posted, not the old one.
 
 * Package name removed from description start.
+
+* tsentiment_1.0.1.tar.gz is still on the waiting list
+
+* remove example for createFolder function
+
+## 27.11.2021 COMMENTS
+
+* PLEASE READ THIS : You are getting a CRAN db warning about "Does not clean up ~/.local/share/R/tsentiment". It has been fixed in the new version, even if you don't care, a lot of unnecessary time was spent suspecting other situations. Everything is working great now, and I should also mention that every time a new analysis is started in the local tsentiment folder, the previous files are deleted. But if I delete that folder or its contents, how will users be able to see the analysis results? I think I have followed most of the steps for create the extension as described in the package creation steps.

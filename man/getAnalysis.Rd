@@ -14,6 +14,8 @@ This function prepare API information and start analysis
 }
 \examples{
 \dontrun{
+clearPrevious()
+getCloudSentiment()
 getBarSentiment()
 }
 }

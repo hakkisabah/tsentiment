@@ -4,8 +4,6 @@
 #'
 #' @return String
 #' @export
-#' @examples
-#' createFolder()
 
 # https://stackoverflow.com/questions/4216753/check-existence-of-directory-and-create-if-doesnt-exist
 # We need results directory and if exist warning false

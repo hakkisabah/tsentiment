@@ -6,6 +6,8 @@
 #' @export
 #' @examples
 #' \dontrun{
+#' clearPrevious()
+#' getCloudSentiment()
 #' getBarSentiment()
 #' }
 

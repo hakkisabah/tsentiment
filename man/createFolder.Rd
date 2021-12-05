@@ -12,6 +12,3 @@ String
 \description{
 This function create a folder in project path
 }
-\examples{
-createFolder()
-}
