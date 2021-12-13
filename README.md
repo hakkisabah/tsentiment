@@ -16,7 +16,7 @@ For sentiment analysis, tsentiment scans the keyword you want to search for, and
 ```
 > setAccount(list(
     BEARER_TOKEN = "Your-User-Token",
-    query = "Your-Keyword",
+    query = "Your-Keyword"
 ))
 // Note : after use setAccount required give permission for writing result files.
 > getAnalysis()
