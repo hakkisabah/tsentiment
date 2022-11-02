@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">tsentiment</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.5</span>
       </span>
     </div>
 
@@ -53,24 +53,27 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">setAccount</span><span class="op">(</span><span class="va">params</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">setAccount</span><span class="op">(</span><span class="va">params</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>params</dt>
 <dd><p>Its have to required Twitter and request informations for using this package</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>String</p>
+    
+
+<p>String</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>BEARER_TOKEN <span class="op">=</span> <span class="st">"DSEFS55SSS"</span>,query <span class="op">=</span> <span class="st">"binance"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">setAccount</span><span class="op">(</span><span class="va">params</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> The tsentiment package will save the analysis results visually and in png format to the</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>BEARER_TOKEN <span class="op">=</span> <span class="st">"DSEFS55SSS"</span>,query <span class="op">=</span> <span class="st">"binance"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">setAccount</span><span class="op">(</span><span class="va">params</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> The tsentiment package will save the analysis results in png and csv format to the</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> /Users/runner/Library/Application Support/org.R-project.R/R/tsentiment/results/ path.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             Your approval is required for these transactions            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                      Please enter using the y/n key                     </span>
@@ -93,7 +96,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
