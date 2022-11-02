@@ -13,3 +13,12 @@
 
 * Bug fixes on Comparison Cloud
 
+# tsentiment 1.0.5
+
+* remove progress bar
+* update tweet process functions and integrate to new back-end implementation
+* add View after for fetched data
+* add CSV feature
+* add some status information
+* add news feature for any updates information
+

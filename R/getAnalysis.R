@@ -12,12 +12,10 @@
 #' }
 
 
-getAnalysis <- function(){
-
+getAnalysis <- function() {
   if (is.environment(APIinfo) &&
       length(APIinfo$BEARER_TOKEN) > 0 &&
-      APIinfo$fileConfirmation == 'y'){
-
+      APIinfo$fileConfirmation == 'y') {
     # tweetFetcher
 
     # Setup Twitter API Informations
@@ -37,9 +35,11 @@ getAnalysis <- function(){
       getCloudSentiment(cleanedDocs)
 
       getBarSentiment(cleanedDocs)
+
+      writeToCSV(fetchedTweet)
     }
 
-  }else{
+  } else{
     warning("First of use setAccount function correctly")
   }
 }

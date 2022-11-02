@@ -11,7 +11,7 @@
 #' getTweet(fetchParams)
 #' }
 
-getTweet <- function(fetchParams){
+getTweet <- function(fetchParams) {
   # https://stackoverflow.com/questions/12193779/how-to-write-trycatch-in-r
   fetchedTweet <- tryCatch({
     response <-
@@ -28,33 +28,37 @@ getTweet <- function(fetchParams){
         type = 'application/json',
         simplifyDataFrame = TRUE
       )
-    if (recent_search_body$status >=400){
+    message("Please waiting until the end.. loading data...")
+    if (recent_search_body$status != 200) {
       warning(recent_search_body, call. = FALSE)
-    }
-    nextParams = list(`nextResultLink` = recent_search_body$data$search_metadata$next_results, `word` = APIinfo$query)
-    if (recent_search_body$data$remainingRateLimit < 1){
-      recent_search_body$data$remainingRateLimit = NULL
-    }
+      return(NULL)
+    } else {
+    nextParams = list(`nextId` = recent_search_body$data$nextId,
+                      `word` = APIinfo$query)
     result =
-      list(
-        `text` = recent_search_body$data$statuses$text,
-        `remainingRateLimit` = recent_search_body$data$remainingRateLimit,
-        `nextParams` = nextParams
-      )
+      list(`text` = recent_search_body$data$Tweets,
+           `nextParams` = nextParams,
+           `news` = recent_search_body$data$news)
+    return(result)
+    }
 
   },
   error = function(err) {
     message("Tweet Fetch Failed ")
-    cat(stringi::stri_pad_both(c("Here's the original error message: ",
-                        err$message),
-                      getOption('width')*0.9), sep='\n')
+    cat(stringi::stri_pad_both(
+      c("Here's the original error message: ",
+        err$message),
+      getOption('width') * 0.9
+    ), sep = '\n')
     return(NULL)
   },
   warning = function(warn) {
     message("Tweet Fetch Warning ")
-    cat(stringi::stri_pad_both(c("Here's the original warning message: ",
-                        warn$message),
-                      getOption('width')*0.9), sep='\n')
+    cat(stringi::stri_pad_both(
+      c("Here's the original warning message: ",
+        warn$message),
+      getOption('width') * 0.9
+    ), sep = '\n')
     return(NULL)
   })
   return(fetchedTweet)

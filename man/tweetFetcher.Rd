@@ -10,5 +10,5 @@ tweetFetcher()
 list
 }
 \description{
-This function prepare http information for fetching process and working together sub functin
+This function prepare http information for fetching process and working together sub function
 }

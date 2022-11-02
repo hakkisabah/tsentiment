@@ -36,7 +36,7 @@ questionOfPermission <- function() {
   documentsBase <- tools::R_user_dir("tsentiment")
   path = paste(documentsBase, "/", "results", "/", sep = "")
   #https://rdrr.io/cran/stringi/man/stri_pad.html
-  cat(stringi::stri_pad_both(c('The tsentiment package will save the analysis results visually and in png format to the',
+  cat(stringi::stri_pad_both(c('The tsentiment package will save the analysis results in png and csv format to the',
                       paste(path," path.",sep=""),
                       'Your approval is required for these transactions',
                       'Please enter using the y/n key'),

@@ -1,7 +1,7 @@
 Package: tsentiment
 Type: Package
 Title: Fetching Tweet Data for Sentiment Analysis
-Version: 1.0.4
+Version: 1.0.5
 Author: Hakki Sabah <hakkisabah@hotmail.com>
 Maintainer: Hakki Sabah <hakkisabah@hotmail.com>
 Description: Which uses Twitter APIs for the necessary data in sentiment analysis, acts as a middleware with the approved Twitter Application.
@@ -15,5 +15,5 @@ LazyData: true
 URL: https://github.com/hakkisabah/tsentiment, https://www.tsentiment.com
 BugReports: https://github.com/hakkisabah/tsentiment/issues
 Depends: R (>= 4.0)
-Imports: reshape2,wordcloud,wordcloud2,ggplot2,httr,syuzhet,tidytext,dplyr,tibble,progress,stringi
-RoxygenNote: 7.1.2
+Imports: grDevices,reshape2,wordcloud,ggplot2,httr,syuzhet,tidytext,dplyr,tibble,stringi
+RoxygenNote: 7.2.1

@@ -14,6 +14,7 @@ utils::globalVariables(names = c("sentiment","Score","png","dev.off"),package = 
 getBarSentiment <- function(tweet = NULL){
 
   if (!is.null(tweet)){
+    message("Generating Barplot..")
 
     tweet_sentiment <- get_nrc_sentiment(as.character(tweet))
 
