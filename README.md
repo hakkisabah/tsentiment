@@ -38,6 +38,7 @@ IMPORTANT NOTE : The previous analysis file are deleted before each new analysis
 ![SetupIndex](afteranalysisresult.png)
 ![SetupIndex](AnalysedComparisonCloud.png)
 ![SetupIndex](AnalysedBarPlot.png)
+![SetupIndex](AnalyzeResultofCSV.png)
 
 ## Error and Warning meanings
 - Too Many Requests 429 (You've reached your rate limit in 15 minute rule. Try 15 minute later)
